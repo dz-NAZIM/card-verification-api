@@ -3,6 +3,7 @@ import stripe
 
 app = Flask(__name__)
 
+# Remplacez ceci par votre clé Stripe
 stripe.api_key = "sk_test_your_stripe_api_key"
 
 @app.route('/verify_card', methods=['POST'])
@@ -23,5 +24,9 @@ def verify_card():
         return jsonify({"status": "error", "message": str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Exécuter l'application sur le port 7070
+    app.run(debug=True, port=7070)
+
+
+
 
